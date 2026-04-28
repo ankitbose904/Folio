@@ -31,7 +31,7 @@ export default function ResumeModal({ isOpen, onClose }) {
             <a
               href="/Ankit_Resume.pdf"
               download="Ankit_Resume.pdf"
-              className="flex items-center gap-2 bg-[#ff3b30] text-white px-4 py-2 rounded-lg font-semibold hover:bg-[#e63329] transition-colors duration-300"
+              className="flex items-center gap-2 bg-[#cc0000] text-white px-4 py-2 rounded-lg font-semibold hover:bg-[#b30000] transition-colors duration-300"
             >
               <Download size={18} />
               Download PDF

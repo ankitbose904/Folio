@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 import { Sparkles } from "lucide-react";
 import { ArrowRight } from "lucide-react";
 
@@ -16,11 +17,11 @@ const projects = [
   },
   {
     id: 2,
-    title: "PizzzA",
-    category: "Pizza Cloud Kitchen App",
+    title: "Frame Finder",
+    category: "Eyeware E-Commerce ",
     color: "#e0e0e0",
-    image: "/cloud-kitchen.png",
-    link: "https://www.behance.net/gallery/231426493/Cloud-Kitchen-Pizza-App",
+    image: "/frame.png",
+    link: "https://www.behance.net/gallery/248371029/Frame-Finder",
   },
 ];
 
@@ -29,16 +30,16 @@ export default function ProjectGrid() {
     <section id="work" className="py-20 px-8 max-w-[1200px] mx-auto">
       {/* Header */}
       <div className="mb-16 flex items-center justify-center gap-4 w-full">
-        <div className="h-0.5 flex-[0_1_60px] bg-[#ff3b30]" />
-        <Sparkles className="text-[#ff3b30]" size={24} fill="currentColor" />
+        <div className="h-0.5 flex-[0_1_60px] bg-[#cc0000]" />
+        <Sparkles className="text-[#cc0000]" size={24} fill="currentColor" />
         <h2
           className="font-black tracking-wide text-[#e5e5e5] uppercase whitespace-nowrap text-[clamp(2.5rem,5vw,4.5rem)]"
           style={{ fontFamily: 'var(--font-archivo), sans-serif' }}
         >
           FEATURED PROJECTS
         </h2>
-        <Sparkles className="text-[#ff3b30]" size={24} fill="currentColor" />
-        <div className="h-0.5 flex-[0_1_60px] bg-[#ff3b30]" />
+        <Sparkles className="text-[#cc0000]" size={24} fill="currentColor" />
+        <div className="h-0.5 flex-[0_1_60px] bg-[#cc0000]" />
       </div>
 
       {/* Grid */}
@@ -59,11 +60,18 @@ export default function ProjectGrid() {
                   className="aspect-[4/3] w-full rounded-[20px] overflow-hidden relative flex items-center justify-center shadow-[0_10px_20px_rgba(0,0,0,0.05)]"
                   style={{
                     backgroundColor: project.color,
-                    backgroundImage: `url(${project.image})`,
-                    backgroundSize: "cover",
-                    backgroundPosition: "center",
                   }}
-                />
+                >
+                  <Image
+                    src={project.image}
+                    alt={project.title}
+                    fill
+                    quality={100}
+                    className="object-cover"
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                    priority={index === 0}
+                  />
+                </div>
                 <div className="flex flex-col gap-1 px-2">
                   <h3 className="text-[1.4rem] font-extrabold text-[#111] tracking-tight">{project.title}</h3>
                   <p className="text-[#777] text-[1.05rem] font-medium">{project.category}</p>

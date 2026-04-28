@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { Sparkles } from "lucide-react";
 
 function PhotoCard({ card }) {
@@ -21,10 +22,13 @@ function PhotoCard({ card }) {
       >
         {/* Front */}
         <div className="card-front absolute inset-0 rounded-3xl overflow-hidden border border-gray-100">
-          <img
+          <Image
             src={card.image}
             alt={card.company}
-            className="w-full h-full object-cover"
+            fill
+            quality={100}
+            className="object-cover"
+            sizes="(max-width: 768px) 100vw, 33vw"
           />
 
           <div className="absolute bottom-6 left-6 right-6">

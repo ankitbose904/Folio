@@ -18,7 +18,7 @@ export default function Hero() {
                 { emoji: "⚽️", style: { bottom: "25%", right: "10%", fontSize: "7rem", transform: "rotate(45deg)" }, y: [0, 8, 0], dur: 5.5 },
                 { emoji: "🎧", style: { top: "35%", left: "15%", fontSize: "12rem", transform: "rotate(35deg)" }, y: [0, 12, 0], dur: 4.2 },
                 { emoji: "⛷️", style: { bottom: "10%", left: "5%", fontSize: "10rem", transform: "rotate(-10deg)" }, y: [0, -10, 0], dur: 4.8 },
-                { emoji: "", style: { bottom: "5%", left: "30%", fontSize: "5rem", transform: "rotate(20deg)" }, y: [0, 5, 0], dur: 3 },
+                { emoji: "🏏", style: { bottom: "5%", left: "30%", fontSize: "5rem", transform: "rotate(20deg)" }, y: [0, 5, 0], dur: 3 },
             ].map(({ emoji, style, y, dur }, i) => (
                 <motion.div
                     key={i}

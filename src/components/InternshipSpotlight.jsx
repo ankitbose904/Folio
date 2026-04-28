@@ -4,10 +4,10 @@ import { motion } from "framer-motion";
 
 export default function InternshipSpotlight() {
   const photos = [
-    "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=400&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=400&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1553877522-43269d4ea984?q=80&w=400&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1573164713988-8665fc963095?q=80&w=400&auto=format&fit=crop",
+    "/photo1.jpeg",
+    "/photo2.jpeg",
+    "/photo3.jpeg",
+    "/panther-logo.png",
   ];
 
   return (
@@ -17,17 +17,17 @@ export default function InternshipSpotlight() {
 
           {/* Left: Target Red Card */}
           <motion.div
-            className="bg-[#cc0000] rounded-3xl p-10 flex flex-col items-start justify-center min-h-[420px] relative overflow-hidden"
+            className="bg-[black] rounded-3xl p-10 flex flex-col items-start justify-center min-h-[420px] relative overflow-hidden"
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6 }}
           >
-            <div className="text-[#ffb3b3] uppercase tracking-[0.35em] text-sm font-semibold mb-4" style={{ fontFamily: 'var(--font-archivo), sans-serif' }}>
-              Internship @ Target
+            <div className="text-[white] uppercase tracking-[0.35em] text-sm font-semibold mb-4" style={{ fontFamily: 'var(--font-archivo), sans-serif' }}>
+              Internship
             </div>
             <h3 className="text-white font-black text-[4.5rem] leading-[0.85] mb-10" style={{ fontFamily: 'var(--font-archivo), sans-serif' }}>
-              Panthar
+              Panthar InfoHub
             </h3>
 
             <div className="w-40 h-40 rounded-full border-[20px] border-white/25 flex items-center justify-center">

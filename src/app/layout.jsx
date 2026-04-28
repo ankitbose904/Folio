@@ -1,6 +1,6 @@
 import { Inter, Archivo_Black, Caveat } from "next/font/google";
 import "./globals.css";
-import SmoothScroll from "@/components/SmoothScroll.jsx";
+// import SmoothScroll from "@/components/SmoothScroll.jsx";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const archivo = Archivo_Black({ weight: "400", subsets: ["latin"], variable: "--font-archivo" });
@@ -17,7 +17,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body suppressHydrationWarning className={`${inter.variable} ${archivo.variable} ${caveat.variable} antialiased bg-[#fdfdfd] text-[#111111] overflow-x-hidden font-sans`}>
-        <SmoothScroll>{children}</SmoothScroll>
+        {children}
       </body>
     </html>
   );

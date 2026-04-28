@@ -19,7 +19,7 @@ export default function Navbar() {
       <div className="flex items-center justify-between bg-white rounded-full px-8 py-4 w-[90%] max-w-3xl pointer-events-auto shadow-[0_20px_40px_rgba(0,0,0,0.3)]">
         <div className="font-black text-lg tracking-wide text-[#111]" style={{ fontFamily: 'var(--font-archivo), sans-serif' }}>
           <Link href="/" className="transition-opacity duration-300 hover:opacity-70">
-            DESIGNED BY ANKIT
+            DESIGNED BY <span className="text-[#cc0000]">ANKIT</span>
           </Link>
         </div>
         <ul className="hidden md:flex gap-8 items-center">
