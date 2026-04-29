@@ -62,7 +62,7 @@ function PhotoCard({ card }) {
       {/* Tap Hint Sticker */}
       {card.hasSticky && (
         <motion.div
-          className="absolute -top-6 -left-6 w-24 h-24 bg-[#FFEA00] shadow-lg flex items-center justify-center p-2 z-20"
+          className="absolute -top-4 -left-4 md:-top-6 md:-left-6 w-20 h-20 md:w-24 md:h-24 bg-[#FFEA00] shadow-lg flex items-center justify-center p-2 z-20 scale-75 md:scale-100"
           style={{ clipPath: 'polygon(0% 0%, 100% 0%, 100% 90%, 90% 100%, 0% 100%)', rotate: '-5deg' }}
           whileHover={{ rotate: '-10deg', scale: 1.1 }}
         >
@@ -85,25 +85,25 @@ export default function Experience() {
     {
       tag: "Job · 2025",
       company: "UI/UX Designer",
-      role: "UI/UX Design Intern",
+      role: "UI/UX Design",
       image: "/panther-logo.png",
       accentColor: "#cc0000",
       backTag: "UX Research",
       description: "Conducted extensive user research and usability testing to refine the digital advertising platform. Developed a comprehensive UI design system that improved designer-to-developer handoff speed by 40%.",
-      date: "May – August 2024",
-      duration: "4 months",
+      date: "October 2024 - October 2025",
+      duration: "1 year",
       hasSticky: false,
     },
     {
       tag: "Freelance · Ongoing",
-      company: "UI/UX Lead",
-      role: "Lead Product Designer",
+      company: "Lead",
+      role: "Lead UI/UX Design",
       image: "/gdg-team.png",
-      accentColor: "#111",
+      accentColor: "#cc0000",
       backTag: "User Experience",
       description: "Designing end-to-end user journeys for high-growth startups. Specializing in conversion rate optimization (CRO) and accessibility-first interfaces that drive engagement and retention.",
-      date: "2023 – Present",
-      duration: "Ongoing",
+      date: "April 2024 - April 2025",
+      duration: "1 year",
       hasSticky: false,
     },
     {
@@ -111,24 +111,24 @@ export default function Experience() {
       company: "MLSA",
       role: "Community Lead",
       image: "/MLSA.jpeg",
-      accentColor: "#0078d4",
+      accentColor: "#cc0000",
       backTag: "Visual UI",
       description: "Collaborated on the redesign of several e-commerce platforms. Focused on creating responsive, high-fidelity prototypes and motion-rich interfaces that tell a brand's story through interaction.",
-      date: "May – August 2024",
-      duration: "4 months",
+      date: "May 2024 - May 2025",
+      duration: "1 year",
       hasSticky: true,
     },
   ];
 
   return (
-    <section className="py-24 px-8 bg-white overflow-hidden" id="experience">
+    <section className="py-24 px-5 md:px-8 bg-white overflow-hidden" id="experience">
       <div className="max-w-[1200px] mx-auto">
         {/* Header */}
-        <div className="mb-14 flex items-center justify-center gap-4 w-full">
-          <div className="h-0.5 flex-[0_1_60px] bg-[#cc0000]" />
-          <Sparkles className="text-[#cc0000]" size={24} fill="currentColor" />
+        <div className="mb-10 md:mb-14 flex items-center justify-center gap-2 md:gap-4 w-full overflow-hidden">
+          <div className="h-0.5 flex-[0_1_20px] md:flex-[0_1_60px] bg-[#cc0000] shrink-0" />
+          <Sparkles className="text-[#cc0000] shrink-0" size={20} fill="currentColor" />
           <motion.h2
-            className="font-black tracking-wide text-[#e5e5e5] uppercase whitespace-nowrap text-[clamp(2.5rem,5vw,4.5rem)]"
+            className="font-black tracking-wide text-[#e5e5e5] uppercase text-[clamp(2rem,6vw,4.5rem)] text-center"
             style={{ fontFamily: 'var(--font-archivo), sans-serif' }}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -137,11 +137,11 @@ export default function Experience() {
           >
             EXPERIENCE
           </motion.h2>
-          <Sparkles className="text-[#cc0000]" size={24} fill="currentColor" />
-          <div className="h-0.5 flex-[0_1_60px] bg-[#cc0000]" />
+          <Sparkles className="text-[#cc0000] shrink-0" size={20} fill="currentColor" />
+          <div className="h-0.5 flex-[0_1_20px] md:flex-[0_1_60px] bg-[#cc0000] shrink-0" />
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8 relative">
           {cards.map((card, index) => (
             <motion.div
               key={index}

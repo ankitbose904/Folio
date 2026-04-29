@@ -10,7 +10,7 @@ const projects = [
   {
     id: 1,
     title: "Spotify on Apple Vision Pro",
-    category: "AR/VR UI/UX Design",
+    category: "AR/VR Experience",
     color: "#cc0000",
     image: "/spotify-vision-pro.png",
     link: "https://www.behance.net/gallery/197518471/Spotify-design-on-Apple-Vision-Pro ",
@@ -27,23 +27,23 @@ const projects = [
 
 export default function ProjectGrid() {
   return (
-    <section id="work" className="py-20 px-8 max-w-[1200px] mx-auto">
+    <section id="work" className="py-20 px-5 md:px-8 max-w-[1200px] mx-auto">
       {/* Header */}
-      <div className="mb-16 flex items-center justify-center gap-4 w-full">
-        <div className="h-0.5 flex-[0_1_60px] bg-[#cc0000]" />
-        <Sparkles className="text-[#cc0000]" size={24} fill="currentColor" />
+      <div className="mb-12 md:mb-16 flex items-center justify-center gap-2 md:gap-4 w-full overflow-hidden">
+        <div className="h-0.5 flex-[0_1_20px] md:flex-[0_1_60px] bg-[#cc0000] shrink-0" />
+        <Sparkles className="text-[#cc0000] shrink-0" size={20} fill="currentColor" />
         <h2
-          className="font-black tracking-wide text-[#e5e5e5] uppercase whitespace-nowrap text-[clamp(2.5rem,5vw,4.5rem)]"
+          className="font-black tracking-wide text-[#e5e5e5] uppercase text-[clamp(1.8rem,5.5vw,4.5rem)] text-center"
           style={{ fontFamily: 'var(--font-archivo), sans-serif' }}
         >
           FEATURED PROJECTS
         </h2>
-        <Sparkles className="text-[#cc0000]" size={24} fill="currentColor" />
-        <div className="h-0.5 flex-[0_1_60px] bg-[#cc0000]" />
+        <Sparkles className="text-[#cc0000] shrink-0" size={20} fill="currentColor" />
+        <div className="h-0.5 flex-[0_1_20px] md:flex-[0_1_60px] bg-[#cc0000] shrink-0" />
       </div>
 
       {/* Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10">
         {projects.map((project, index) => (
           <motion.div
             key={project.id}

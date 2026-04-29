@@ -1,29 +1,29 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState, useEffect, useRef } from "react"
 import { cn } from "@/lib/utils"
 
 const testimonials = [
   {
     id: 1,
-    quote: "This changed everything for me. The workflow is now seamless and incredibly intuitive.",
-    author: "Sarah Chen",
-    role: "Designer at Figma",
-    avatar: "https://images.unsplash.com/photo-1701615004837-40d8573b6652?q=80&w=200&auto=format&fit=crop",
+    quote: "Ankit consistently creates intuitive designs that enhance user engagement.",
+    author: "Anurag Bose",
+    role: "Jr. Software Developer ",
+    avatar: "/Anurag 1.png",
   },
   {
     id: 2,
-    quote: "Simply brilliant. Nothing else compares to the speed and efficiency we've gained.",
-    author: "Marcus Johnson",
-    role: "Engineer at Vercel",
-    avatar: "https://plus.unsplash.com/premium_photo-1671656349218-5218444643d8?q=80&w=200&auto=format&fit=crop",
+    quote: "Transforms ideas into clean, functional, and visually appealing interfaces.",
+    author: "Abhay Namdev",
+    role: "Founder & CEO of Panther",
+    avatar: "/Abhay.webp",
   },
   {
     id: 3,
-    quote: "The attention to detail is unmatched. It truly stands out among all other solutions.",
-    author: "Elena Rodriguez",
-    role: "Founder at Craft",
-    avatar: "https://images.unsplash.com/photo-1607746882042-944635dfe10e?q=80&w=200&auto=format&fit=crop",
+    quote: "Great at turning feedback into polished, high-quality UI solutions.",
+    author: "Abdul Reheman",
+    role: "SAP Developer ",
+    avatar: "/abdul.jpeg",
   },
 ]
 
@@ -35,16 +35,27 @@ export function UniqueTestimonial() {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null)
   const [isPaused, setIsPaused] = useState(false)
 
+  // Keep a ref always pointing to the latest activeIndex
+  // so the interval closure never goes stale
+  const activeIndexRef = useRef(activeIndex)
+  activeIndexRef.current = activeIndex
+  const isAnimatingRef = useRef(isAnimating)
+  isAnimatingRef.current = isAnimating
+
   // Auto-scroll functionality
   useEffect(() => {
     if (isPaused) return
 
     const interval = setInterval(() => {
-      setActiveIndex((prevIndex) => {
-        const nextIndex = (prevIndex + 1) % testimonials.length
-        handleSelect(nextIndex)
-        return nextIndex
-      })
+      if (isAnimatingRef.current) return
+      const nextIndex = (activeIndexRef.current + 1) % testimonials.length
+      setIsAnimating(true)
+      setTimeout(() => {
+        setDisplayedQuote(testimonials[nextIndex].quote)
+        setDisplayedRole(testimonials[nextIndex].role)
+        setActiveIndex(nextIndex)
+        setTimeout(() => setIsAnimating(false), 400)
+      }, 200)
     }, 5000) // Change every 5 seconds
 
     return () => clearInterval(interval)
@@ -63,7 +74,7 @@ export function UniqueTestimonial() {
   }
 
   return (
-    <div 
+    <div
       className="flex flex-col items-center gap-12 py-8"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}

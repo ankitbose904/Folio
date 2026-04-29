@@ -64,7 +64,7 @@ const projects = [
 
 export default function ProjectsContent() {
   return (
-    <section className="min-h-screen py-32 px-8 max-w-[1400px] mx-auto">
+    <section className="min-h-screen pt-28 md:pt-32 pb-16 md:pb-20 px-5 md:px-8 max-w-[1400px] mx-auto">
       {/* Header */}
       <div className="mb-20 text-center">
         <div
@@ -78,7 +78,7 @@ export default function ProjectsContent() {
         </div>
 
         <h1
-          className="text-[clamp(3rem,8vw,6rem)] font-black text-white leading-none mb-8"
+          className="text-[clamp(2.5rem,10vw,6rem)] font-black text-white leading-none mb-8"
           style={{ fontFamily: 'var(--font-archivo), sans-serif' }}
         >
           SELECTED <br /> <span className="text-[#cc0000]">WORKS</span>
