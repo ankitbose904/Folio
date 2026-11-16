@@ -36,7 +36,7 @@ export default function Footer() {
             {[
               // { label: "Twitter",   href: "https://twitter.com/ankitbose904" },
               { label: "LinkedIn", href: "https://www.linkedin.com/in/ankitbose904/" },
-              { label: "Instagram", href: "https://www.instagram.com/_ankitbose_002/" },
+              { label: "Instagram", href: "https://www.instagram.com/theunfiltered.ankit/" },
               { label: "Behance", href: "https://www.behance.net/ankitbose8" },
             ].map(({ label, href }) => (
               <a

@@ -90,8 +90,8 @@ export default function Experience() {
       accentColor: "#cc0000",
       backTag: "UX Research",
       description: "Conducted extensive user research and usability testing to refine the digital advertising platform. Developed a comprehensive UI design system that improved designer-to-developer handoff speed by 40%.",
-      date: "October 2024 - October 2025",
-      duration: "1 year",
+      date: "October 2024 - Present",
+      duration: "2+ years",
       hasSticky: false,
     },
     {

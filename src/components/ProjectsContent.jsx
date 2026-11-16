@@ -20,8 +20,8 @@ const projects = [
     title: "Sweet & Sour",
     category: "E-Commerce",
     color: "#1a1a1a",
-    image: "/pickle.png",
-    link: "https://www.behance.net/gallery/248371203/Sweet-Sour",
+    image: "/sweet&sour.png",
+    link: "https://www.sweetnsour.in/",
     description: "Sweet & Sour is an e-commerce platform offering a wide variety of homemade and traditional pickles, delivering authentic flavors with convenient online ordering and doorstep delivery."
   },
   {
@@ -44,12 +44,12 @@ const projects = [
   },
   {
     id: 5,
-    title: "Frame Finder",
-    category: "Eyewear",
+    title: "JP Interio",
+    category: "Interior Design Company Website",
     color: "#e0e0e0",
-    image: "/frame.png",
-    link: "https://www.behance.net/gallery/248371425/Fito",
-    description: "FrameFinder is an e-commerce platform that helps users find the perfect eyewear frames by offering a wide selection, virtual try-on features, and personalized recommendations for a seamless shopping experience."
+    image: "/JP Interio Warm Interior Showcase.png",
+    link: "https://jp-interio.vercel.app/",
+    description: "JP Interio is an interior design company website that helps users find the perfect interior design for their homes by offering a wide selection, virtual try-on features, and personalized recommendations for a seamless shopping experience."
   },
   // {
   //   id: 6,
@@ -103,9 +103,9 @@ export default function ProjectsContent() {
               <div
                 className="group"
               >
-              <div className="relative aspect-[4/5] overflow-hidden rounded-3xl bg-gradient-to-br from-[#1a1a1a] to-[#2a2a2a] cursor-pointer border border-white/5 group-hover:border-white/10 transition-all duration-500">
+              <div className="relative aspect-video overflow-hidden rounded-3xl bg-gradient-to-br from-[#1a1a1a] to-[#2a2a2a] cursor-pointer border border-white/5 group-hover:border-white/10 transition-all duration-500">
                 <div
-                  className="absolute inset-0 z-10 bg-black/0 group-hover:bg-black/40 transition-all duration-500"
+                  className="absolute inset-0 z-10 bg-black/0 group-hover:bg-black/60 transition-all duration-500"
                 />
 
                 {/* Image */}
@@ -120,24 +120,24 @@ export default function ProjectsContent() {
                 />
 
                 {/* Content Overlay */}
-                <div className="absolute inset-x-0 bottom-0 z-20 p-8 translate-y-8 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500">
-                  <span className="inline-block px-3 py-1 rounded-full bg-[#cc0000] text-[#111] text-[10px] font-black uppercase mb-4">
+                <div className="absolute inset-x-0 bottom-0 z-20 p-5 md:p-6 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500">
+                  <span className="inline-block px-3 py-1 rounded-full bg-[#cc0000] text-[#111] text-[10px] font-black uppercase mb-2">
                     {project.category}
                   </span>
-                  <h3 className="text-3xl font-black text-white mb-2 leading-tight">
+                  <h3 className="text-xl md:text-2xl font-black text-white mb-1.5 leading-tight">
                     {project.title}
                   </h3>
-                  <p className="text-white/70 text-sm mb-6 line-clamp-2">
+                  <p className="text-white/70 text-xs md:text-sm mb-3 line-clamp-2">
                     {project.description}
                   </p>
-                  <div className="flex items-center gap-2 text-white font-bold text-sm uppercase tracking-wider">
-                    View Project <ArrowRight size={16} className="transition-transform group-hover:translate-x-2" />
+                  <div className="flex items-center gap-2 text-white font-bold text-xs uppercase tracking-wider">
+                    View Project <ArrowRight size={14} className="transition-transform group-hover:translate-x-2" />
                   </div>
                 </div>
 
                 {/* Corner Decoration */}
-                <div className="absolute top-6 right-6 z-20 w-12 h-12 rounded-full bg-white/10 border border-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                  <ArrowRight className="-rotate-45 text-white" size={20} />
+                <div className="absolute top-4 right-4 md:top-6 md:right-6 z-20 w-10 h-10 md:w-12 md:h-12 rounded-full bg-white/10 border border-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                  <ArrowRight className="-rotate-45 text-white" size={18} />
                 </div>
               </div>
 

@@ -9,18 +9,18 @@ import { ArrowRight } from "lucide-react";
 const projects = [
   {
     id: 1,
-    title: "Spotify on Apple Vision Pro",
-    category: "AR/VR Experience",
-    color: "#cc0000",
-    image: "/spotify-vision-pro.png",
-    link: "https://www.behance.net/gallery/197518471/Spotify-design-on-Apple-Vision-Pro ",
+    title: "OrionKids",
+    category: "Children's mind game learning Website",
+    color: "#1a73e8",
+    image: "/OrionKids Workspace Product Showcase.png",
+    link: "https://orionkids-frontend.vercel.app/",
   },
   {
     id: 2,
-    title: "Frame Finder",
-    category: "Eyeware E-Commerce ",
-    color: "#e0e0e0",
-    image: "/frame.png",
+    title: "J.P.Interio",
+    category: "Interior Design Company Website",
+    color: "#6b7280",
+    image: "/JP Interio Warm Interior Showcase.png",
     link: "https://www.behance.net/gallery/248371029/Frame-Finder",
   },
 ];
@@ -57,7 +57,7 @@ export default function ProjectGrid() {
             <a href={project.link} target="_blank" rel="noopener noreferrer" className="flex flex-col no-underline">
               <div className="flex flex-col gap-5 cursor-pointer">
                 <div
-                  className="aspect-[4/3] w-full rounded-[20px] overflow-hidden relative flex items-center justify-center shadow-[0_10px_20px_rgba(0,0,0,0.05)]"
+                  className="aspect-video w-full rounded-[20px] overflow-hidden relative flex items-center justify-center shadow-[0_10px_20px_rgba(0,0,0,0.05)]"
                   style={{
                     backgroundColor: project.color,
                   }}

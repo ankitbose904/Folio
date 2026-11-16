@@ -97,7 +97,7 @@ export default function AboutSection() {
         {/* Card 5: Stats */}
         <motion.div className="bg-[#cc0000] rounded-3xl p-6 flex flex-col items-center justify-center text-white min-h-[150px] md:min-h-0" variants={cardVariants}>
           <span className="text-xs font-semibold uppercase tracking-widest opacity-80">Experience</span>
-          <span className="text-5xl font-black my-1" style={{ fontFamily: 'var(--font-archivo), sans-serif' }}>1.5+</span>
+          <span className="text-5xl font-black my-1" style={{ fontFamily: 'var(--font-archivo), sans-serif' }}>2+</span>
           <span className="text-xs font-semibold uppercase tracking-widest opacity-80">Years</span>
         </motion.div>
 
