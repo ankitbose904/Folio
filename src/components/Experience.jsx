@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useRef, useEffect, useCallback } from "react";
+import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { Camera, ArrowLeft, ArrowRight } from "lucide-react";
 
@@ -15,133 +16,110 @@ const STOPS = [
     place: "Jhansi",
     tag: "Chapter 01 · 2023",
     name: "Linkedin Marketing Insider",
-    c: "#0A66C2",
+    c: "#ffffffff",
     type: "Linkedin",
     title: "Linkedin Certified Marketing Insider.",
     txt: "",
     heading: -45,
-    pos: { x: 410.9, y: 613.8 },
-    fraction: 0.075,
+    pos: { x: 372.7, y: 582.7 },
+    fraction: 0.10,
+    pillSide: "left",
   },
   {
-    id: "Google",
-    when: "April 2022",
-    place: "New Delhi",
-    tag: "Chapter 02 · Apr 2022",
-    name: "The failed app",
-    c: "#ffffffff",
-    type: "app",
+    id: "Google cloud Arcade program",
+    when: "December 2023",
+    place: "Jhansi",
+    tag: "Chapter 02 · Dec 2023",
+    name: "Google cloud Arcade program",
+    c: "#4285F4",
+    type: "Google cloud Arcade program",
     title: "A failed app changed my life.",
-    txt: "A friend and I tried building an app together. It didn't work, but somewhere along the way I opened Figma and got completely hooked. The app failed. I accidentally found UX, and, eventually, the career I wanted.",
-    stats: [["1st", "Startup Built"], ["100%", "Self-Taught UX"]],
-    heading: -30,
-    pos: { x: 294.8, y: 521.6 },
-    fraction: 0.15,
-  },
-  {
-    id: "iitd",
-    when: "2022 – 2023",
-    place: "New Delhi",
-    tag: "Chapter 03 · 2022 – 2023 · New Delhi",
-    name: "IIT Delhi",
-    c: "#2E9E6B",
-    type: "iit",
-    title: "I started chasing that feeling.",
-    txt: "I began teaching myself design and got an internship at IIT Delhi. For the first time, the things I was learning at night were solving problems for someone beyond myself. I realised I didn't just enjoy designing. I enjoyed figuring things out.",
-    stats: [["HCI", "Lab Research"], ["Night & Day", "Deep Practice"]],
+    txt: "",
+    // stats: [["1st", "Startup Built"], ["100%", "Self-Taught UX"]],
     heading: -15,
-    pos: { x: 190.2, y: 404.6 },
-    fraction: 0.23,
+    pos: { x: 188.0, y: 399.4 },
+    fraction: 0.233,
+    pillSide: "left",
   },
   {
-    id: "ht",
+    id: "GDSC Member",
+    when: "2023 - 2024",
+    place: "Jhansi",
+    tag: "Chapter 03 · 2023 – 2024 · Jhansi",
+    name: "GDSC-SRGI Member",
+    c: "#2E9E6B",
+    type: "Google Developer Student Club",
+    title: "Google Developer Student Club",
+    txt: "",
+    // stats: [["HCI", "Lab Research"], ["Night & Day", "Deep Practice"]],
+    heading: 20,
+    pos: { x: 300.4, y: 199.4 },
+    fraction: 0.367,
+    pillSide: "left",
+  },
+  {
+    id: "MLSA",
     when: "2024",
-    place: "New Delhi",
-    tag: "Chapter 04 · 2024 · New Delhi",
-    name: "Hindustan Times",
-    c: "#1E7FC8",
-    type: "ht",
-    title: "HT Media made it real.",
-    txt: "At Hindustan Times, design became a real job, not just something I was learning on the side. For the first time, the things I designed shipped to people I'd never meet across millions of daily news readers.",
-    stats: [["Millions", "Daily Readers"], ["Editorial", "Feed Redesign"]],
-    heading: 10,
-    pos: { x: 205.7, y: 256.4 },
-    fraction: 0.31,
+    place: "Jhansi",
+    tag: "Chapter 04 · 2024 · Jhansi",
+    name: "Microsoft Learn Student Ambassadors",
+    c: "#0078D4",
+    type: "Microsoft Learn Student Ambassadors",
+    title: "Microsoft Learn Student Ambassadors",
+    txt: "",
+    // stats: [["Millions", "Daily Readers"], ["Editorial", "Feed Redesign"]],
+    heading: 86,
+    pos: { x: 500.0, y: 322.1 },
+    fraction: 0.50,
+    pillSide: "top",
   },
   {
-    id: "eazydiner",
-    when: "Feb – Apr 2025",
-    place: "New Delhi",
-    tag: "Chapter 05 · Feb – Apr 2025",
-    name: "EazyDiner",
-    c: "#EE5A2B",
-    type: "eazydiner",
-    title: "EazyDiner taught me to look beyond the screen.",
-    txt: "At the end of a meal, people were hunting through 300+ bank and restaurant offers just to get a discount. Some gave up and paid full price. I led the redesign of the PayEazy coupon tray, The Coupon Hunter, so the best deal is waiting upfront. It's live on the app.",
-    stats: [["+41%", "Payment success"], ["300+", "Offers ranked"]],
-    heading: 45,
-    pos: { x: 345.4, y: 194.1 },
-    fraction: 0.39,
-  },
-  {
-    id: "mmt",
-    when: "Apr – Oct 2025",
-    place: "Gurgaon",
-    tag: "Chapter 06 · Apr – Oct 2025 · Gurgaon",
-    name: "MakeMyTrip",
-    c: "#E4262C",
-    type: "mmt",
-    title: "Then everything got bigger at MakeMyTrip.",
-    txt: "Millions of users, complicated journeys, and tiny decisions that suddenly mattered a lot more. MakeMyTrip showed me what product design looked like at scale, and pushed me to think beyond individual screens.",
-    stats: [["4,500+", "Bookings a day"], ["16 → 35%", "Hotel response rate"]],
+    id: "GDG",
+    when: "Feb – June 2025",
+    place: "Jhansi",
+    tag: "Chapter 05 · Feb – June 2025",
+    name: "Google Developer Group UI/UX Lead",
+    c: "#ffffff",
+    type: "GDG-UI/UX Lead",
+    title: "Google Developer Group UI/UX Lead",
+    txt: "",
+    // stats: [["+41%", "Payment success"], ["300+", "Offers ranked"]],
     heading: 135,
-    pos: { x: 654.6, y: 194.1 },
-    fraction: 0.61,
+    pos: { x: 699.6, y: 199.4 },
+    fraction: 0.633,
+    pillSide: "right",
   },
   {
-    id: "oyo",
-    when: "Dec 2025",
-    place: "Gurgaon",
-    tag: "Chapter 07 · Dec 2025 · Gurgaon",
-    name: "OYO",
-    c: "#DC402A",
-    type: "oyo",
-    title: "Then OYO, and the whole stay.",
-    txt: "At OYO, a hospitality chain, I design the moments between booking a room and walking into it: self check-in, room selection and cancellations. For Traum, an OYO company in Germany, I redesigned the host dashboard.",
-    stats: [["500", "Properties validated"], ["6,000+", "Approved next"]],
-    heading: 160,
-    pos: { x: 805.8, y: 272.4 },
-    fraction: 0.70,
+    id: "KavachX",
+    when: "Present",
+    place: "Jhansi",
+    tag: "Chapter 06 · Present · Jhansi",
+    name: "KavachX Pvt.Ltd.",
+    c: "#E4262C",
+    type: "KavachX",
+    title: "Senior UX designer",
+    txt: "",
+    // stats: [["4,500+", "Bookings a day"], ["16 → 35%", "Hotel response rate"]],
+    heading: 165,
+    pos: { x: 812.0, y: 399.4 },
+    fraction: 0.767,
+    pillSide: "right",
   },
   {
-    id: "lastlook",
-    when: "2026",
-    place: "On the App Store",
-    tag: "Chapter 08 · 2026 · App Store",
-    name: "LastLook",
-    c: "#9A6A3E",
-    type: "eyes",
-    title: "Then I built something of my own.",
-    txt: "LastLook started as a problem I wanted to solve for myself: I kept forgetting my things. So I designed it, built it and launched it on iOS. Scaled to paying subscribers and half a million organic impressions.",
-    stats: [["400+", "Downloads"], ["10", "Paying subscribers"], ["500K+", "Organic views"]],
-    heading: 180,
-    pos: { x: 789.1, y: 438.2 },
-    fraction: 0.79,
-  },
-  {
-    id: "creator",
-    when: "Always on",
-    place: "Instagram & LinkedIn",
-    tag: "Chapter 09 · Ongoing · Media",
-    name: "Creator corner",
-    c: "#E1306C",
-    type: "camera",
-    title: "And I share it all along the way.",
-    txt: "On Instagram and LinkedIn, I share what I make: design, building, career, and a few things I've learned along the way.",
-    stats: [["100K+", "Impressions"], ["Mentorship", "Community assets"]],
+    id: "Panthar",
+    when: "Present",
+    place: "Jhansi",
+    tag: "Chapter 07 · Present . Jhansi",
+    name: "Panthar InfoHub Pvt. Ltd.",
+    c: "#000000ff",
+    type: "Panthar",
+    title: "Design Head",
+    txt: "",
+    // stats: [["100K+", "Impressions"], ["Mentorship", "Community assets"]],
     heading: 210,
-    pos: { x: 658.6, y: 558.3 },
-    fraction: 0.88,
+    pos: { x: 627.3, y: 582.7 },
+    fraction: 0.90,
+    pillSide: "right",
   },
 ];
 
@@ -177,11 +155,10 @@ function HeartPin({ stop, isActive, onClick }) {
 
         {/* Teardrop Pin Marker */}
         <div
-          className={`w-7 h-9 sm:w-8.5 sm:h-11 relative flex items-center justify-center transition-all duration-300 ${
-            isActive
+          className={`w-7 h-9 sm:w-8.5 sm:h-11 relative flex items-center justify-center transition-all duration-300 ${isActive
               ? "scale-115 -translate-y-1 drop-shadow-[0_8px_18px_rgba(26,95,208,0.5)]"
               : "group-hover:scale-105 group-hover:-translate-y-0.5 drop-shadow-[0_4px_10px_rgba(19,35,58,0.18)]"
-          }`}
+            }`}
           style={{
             background: stop.c,
             clipPath:
@@ -197,12 +174,56 @@ function HeartPin({ stop, isActive, onClick }) {
                 </svg>
               </div>
             )}
-            {stop.type === "nsut" && (
-              <span className="text-[6.5px] font-black text-[#D2553A] tracking-tighter">NSUT</span>
+            {(stop.type === "google" || stop.type === "Google" || stop.type === "app" || stop.type === "Google cloud Arcade program" || stop.id === "Google cloud Arcade program" || stop.type === "GDG-UI/UX Lead" || stop.id === "GDG") && (
+              <div className="w-full h-full bg-[#4285F4] flex items-center justify-center p-0.5">
+                <svg viewBox="0 0 24 24" className="w-3 h-3 sm:w-3.5 sm:h-3.5 fill-white" aria-hidden="true">
+                  <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" />
+                  <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" />
+                  <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z" />
+                  <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z" />
+                </svg>
+              </div>
             )}
-            {stop.type === "app" && (
-              <div className="w-full h-full bg-[#180828] flex items-center justify-center">
-                <span className="text-[8.5px] font-black text-[#f43f5e]">✕</span>
+            {(stop.type === "Google Developer Student Club" || stop.type === "gdsc" || stop.id === "GDSC Member") && (
+              <div className="w-full h-full bg-white flex items-center justify-center p-0.5">
+                <svg viewBox="0 0 24 24" className="w-3 h-3 sm:w-3.5 sm:h-3.5" fill="none" strokeWidth="2.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                  <path d="M 9.5 6 L 4.5 12" stroke="#EA4335" />
+                  <path d="M 4.5 12 L 9.5 18" stroke="#4285F4" />
+                  <path d="M 14.5 6 L 19.5 12" stroke="#0F9D58" />
+                  <path d="M 19.5 12 L 14.5 18" stroke="#FBBC04" />
+                </svg>
+              </div>
+            )}
+            {(stop.type === "mlsa" || stop.type === "MLSA" || stop.type === "Microsoft Learn Student Ambassadors" || stop.id === "MLSA") && (
+              <div className="w-full h-full bg-white flex items-center justify-center p-0.5">
+                <svg viewBox="0 0 24 24" className="w-3 h-3 sm:w-3.5 sm:h-3.5" aria-hidden="true">
+                  <rect x="2" y="2" width="9.2" height="9.2" fill="#F25022" rx="0.5" />
+                  <rect x="12.8" y="2" width="9.2" height="9.2" fill="#7FBA00" rx="0.5" />
+                  <rect x="2" y="12.8" width="9.2" height="9.2" fill="#00A4EF" rx="0.5" />
+                  <rect x="12.8" y="12.8" width="9.2" height="9.2" fill="#FFB900" rx="0.5" />
+                </svg>
+              </div>
+            )}
+            {(stop.type === "Panthar" || stop.type === "panther" || stop.id === "Panthar") && (
+              <div className="w-full h-full bg-white flex items-center justify-center p-0.5">
+                <Image
+                  src="/panther-logo-badge.png"
+                  alt="Panthar InfoHub"
+                  width={24}
+                  height={24}
+                  className="w-full h-full object-contain"
+                />
+              </div>
+            )}
+            {(stop.type === "KavachX" || stop.type === "kavachx" || stop.id === "KavachX") && (
+              <div className="w-full h-full bg-white flex items-center justify-center p-0.5">
+                <Image
+                  src="/kavachx-logo.png"
+                  alt="KavachX"
+                  width={24}
+                  height={24}
+                  className="w-full h-full object-contain"
+                />
               </div>
             )}
             {stop.type === "iit" && (
@@ -251,13 +272,20 @@ function HeartPin({ stop, isActive, onClick }) {
         </div>
 
         {/* Attached White Pill Badge (Turns Dark on Active Stop) */}
-        <div className="absolute left-[108%] top-0.5 whitespace-nowrap pl-1 pointer-events-none">
+        <div
+          className={`absolute whitespace-nowrap pointer-events-none transition-all z-20 ${
+            stop.pillSide === "left" || (!stop.pillSide && stop.pos.x < 480)
+              ? "right-[112%] top-0.5 pr-1.5 text-right"
+              : stop.pillSide === "top" || (!stop.pillSide && stop.pos.x >= 480 && stop.pos.x <= 520)
+              ? "bottom-[115%] left-1/2 -translate-x-1/2 pb-1.5 text-center"
+              : "left-[112%] top-0.5 pl-1.5 text-left"
+          }`}
+        >
           <div
-            className={`px-2 py-0.5 rounded-md text-[10px] sm:text-[11px] font-bold transition-all shadow-sm border ${
-              isActive
+            className={`px-2 py-0.5 rounded-md text-[10px] sm:text-[11px] font-bold transition-all shadow-sm border ${isActive
                 ? "bg-[#13233A] text-white border-black scale-105 shadow-md"
                 : "bg-white text-[#13233A] border-gray-200/80 group-hover:border-gray-300"
-            }`}
+              }`}
           >
             {stop.name}
           </div>
@@ -285,12 +313,66 @@ function ChapterCard({ stop, index, total, onPrev, onNext, className = "" }) {
         <div className="flex items-center gap-2.5">
           <div
             className="w-8 h-8 rounded-xl flex items-center justify-center text-white font-black text-xs shadow-xs overflow-hidden"
-            style={{ backgroundColor: stop.c }}
+            style={{
+              backgroundColor:
+                (stop.type === "Linkedin" || stop.type === "linkedin")
+                  ? "#0A66C2"
+                  : (stop.type === "Google Developer Student Club" || stop.type === "gdsc" || stop.id === "GDSC Member" || stop.type === "mlsa" || stop.type === "MLSA" || stop.type === "Microsoft Learn Student Ambassadors" || stop.id === "MLSA" || stop.type === "Panthar" || stop.type === "panther" || stop.id === "Panthar" || stop.type === "KavachX" || stop.type === "kavachx" || stop.id === "KavachX")
+                  ? "#ffffff"
+                  : (stop.type === "google" || stop.type === "Google" || stop.type === "app" || stop.type === "Google cloud Arcade program" || stop.id === "Google cloud Arcade program" || stop.type === "GDG-UI/UX Lead" || stop.id === "GDG")
+                  ? "#4285F4"
+                  : stop.c,
+              border:
+                (stop.type === "Google Developer Student Club" || stop.type === "gdsc" || stop.id === "GDSC Member" || stop.type === "mlsa" || stop.type === "MLSA" || stop.type === "Microsoft Learn Student Ambassadors" || stop.id === "MLSA" || stop.type === "Panthar" || stop.type === "panther" || stop.id === "Panthar" || stop.type === "KavachX" || stop.type === "kavachx" || stop.id === "KavachX")
+                  ? "1px solid rgba(0,0,0,0.08)"
+                  : undefined,
+            }}
           >
             {(stop.type === "Linkedin" || stop.type === "linkedin") ? (
               <svg viewBox="0 0 24 24" className="w-4.5 h-4.5 fill-white" aria-hidden="true">
                 <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z" />
               </svg>
+            ) : (stop.type === "google" || stop.type === "Google" || stop.type === "app" || stop.type === "Google cloud Arcade program" || stop.id === "Google cloud Arcade program" || stop.type === "GDG-UI/UX Lead" || stop.id === "GDG") ? (
+              <svg viewBox="0 0 24 24" className="w-4.5 h-4.5 fill-white" aria-hidden="true">
+                <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" />
+                <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" />
+                <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z" />
+                <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z" />
+              </svg>
+            ) : (stop.type === "Google Developer Student Club" || stop.type === "gdsc" || stop.id === "GDSC Member") ? (
+              <svg viewBox="0 0 24 24" className="w-5 h-5" fill="none" strokeWidth="2.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                <path d="M 9.5 6 L 4.5 12" stroke="#EA4335" />
+                <path d="M 4.5 12 L 9.5 18" stroke="#4285F4" />
+                <path d="M 14.5 6 L 19.5 12" stroke="#0F9D58" />
+                <path d="M 19.5 12 L 14.5 18" stroke="#FBBC04" />
+              </svg>
+            ) : (stop.type === "mlsa" || stop.type === "MLSA" || stop.type === "Microsoft Learn Student Ambassadors" || stop.id === "MLSA") ? (
+              <svg viewBox="0 0 24 24" className="w-4.5 h-4.5" aria-hidden="true">
+                <rect x="2" y="2" width="9.2" height="9.2" fill="#F25022" rx="0.8" />
+                <rect x="12.8" y="2" width="9.2" height="9.2" fill="#7FBA00" rx="0.8" />
+                <rect x="2" y="12.8" width="9.2" height="9.2" fill="#00A4EF" rx="0.8" />
+                <rect x="12.8" y="12.8" width="9.2" height="9.2" fill="#FFB900" rx="0.8" />
+              </svg>
+            ) : (stop.type === "Panthar" || stop.type === "panther" || stop.id === "Panthar") ? (
+              <div className="w-full h-full bg-white flex items-center justify-center p-1">
+                <Image
+                  src="/panther-logo-badge.png"
+                  alt="Panthar InfoHub"
+                  width={32}
+                  height={32}
+                  className="w-full h-full object-contain"
+                />
+              </div>
+            ) : (stop.type === "KavachX" || stop.type === "kavachx" || stop.id === "KavachX") ? (
+              <div className="w-full h-full bg-white flex items-center justify-center p-1">
+                <Image
+                  src="/kavachx-logo.png"
+                  alt="KavachX"
+                  width={32}
+                  height={32}
+                  className="w-full h-full object-contain"
+                />
+              </div>
             ) : (
               stop.name.slice(0, 2).toUpperCase()
             )}
@@ -389,7 +471,7 @@ export default function Experience() {
     setProgress(p);
 
     // Timeline mapping:
-    // 0.00 -> 0.76 walks through 9 stops (stops 0 to 8)
+    // 0.00 -> 0.76 walks through 7 stops (stops 0 to 6)
     // 0.76 -> 0.90 draws the remaining path back to the tip (completed heart)
     // 0.90 -> 1.00 holds the completed heart stuck on screen before exit!
     if (p <= 0.76) {
@@ -431,21 +513,21 @@ export default function Experience() {
     });
   };
 
-  const isCompleted = progress >= 0.88;
+  const isCompleted = progress >= 0.90;
   const isWalking = progress > 0.01;
   const activeStop = STOPS[activeIdx] || STOPS[0];
 
   // Continuous smooth drawing of the heart path:
   // Starts at 0.00 (right at start flags at the bottom tip)
-  // 0.00 -> 0.76 reaches fraction 0.88 (Creator corner)
+  // 0.00 -> 0.76 reaches fraction 0.90 (Panthar InfoHub)
   // 0.76 -> 0.90 reaches fraction 1.00 (Back to tip, 100% completed!)
   let pathDrawProgress = 0;
   if (progress <= 0.76) {
     const stepRatio = progress / 0.76;
-    pathDrawProgress = Math.min(0.88, Math.max(0, stepRatio * 0.88));
+    pathDrawProgress = Math.min(0.90, Math.max(0, stepRatio * 0.90));
   } else if (progress <= 0.90) {
     const compRatio = (progress - 0.76) / 0.14;
-    pathDrawProgress = 0.88 + compRatio * 0.12;
+    pathDrawProgress = 0.90 + compRatio * 0.10;
   } else {
     pathDrawProgress = 1.0;
   }
@@ -488,7 +570,7 @@ export default function Experience() {
           </h2>
 
           <p className="text-xs text-gray-500 font-medium mt-1">
-            Nine stops between 2021 and now. Scroll to walk the path.
+            Seven stops between 2023 and now. Scroll to walk the path.
           </p>
         </div>
 
@@ -550,16 +632,16 @@ export default function Experience() {
                     </h3>
 
                     <p className="text-xs text-gray-600 leading-relaxed mb-4">
-                      Nine stops between 2021 and now: from Mechanical Engineering at NSUT to scaling digital experiences for millions at MakeMyTrip, OYO, and beyond.
+                      Seven milestones between 2023 and now: scaling digital design, community leadership, and impactful product experiences.
                     </p>
 
                     <div className="grid grid-cols-2 gap-2 mb-4">
                       <div className="rounded-xl p-2.5 text-center bg-blue-50/70 border border-blue-100">
-                        <div className="text-base font-black text-[#1A5FD0]">9 Stops</div>
+                        <div className="text-base font-black text-[#1A5FD0]">7 Stops</div>
                         <div className="text-[9.5px] font-bold text-gray-500 uppercase">Shipped & Scaled</div>
                       </div>
                       <div className="rounded-xl p-2.5 text-center bg-blue-50/70 border border-blue-100">
-                        <div className="text-base font-black text-[#1A5FD0]">2021 → NOW</div>
+                        <div className="text-base font-black text-[#1A5FD0]">2023 → NOW</div>
                         <div className="text-[9.5px] font-bold text-gray-500 uppercase">Always Building</div>
                       </div>
                     </div>
@@ -594,9 +676,8 @@ export default function Experience() {
 
           {/* Centered Heart Map Canvas (With subtle cartographic zoom on enter) */}
           <div
-            className={`relative flex-1 w-full max-w-[580px] xl:max-w-[660px] aspect-[1000/780] overflow-visible select-none mx-auto transition-transform duration-700 ease-out ${
-              isWalking ? "scale-105 sm:scale-110" : "scale-100"
-            }`}
+            className={`relative flex-1 w-full max-w-[580px] xl:max-w-[660px] aspect-[1000/780] overflow-visible select-none mx-auto transition-transform duration-700 ease-out ${isWalking ? "scale-105 sm:scale-110" : "scale-100"
+              }`}
           >
             {/* SVG Cartographic Artwork */}
             <svg viewBox="0 0 1000 780" className="absolute inset-0 w-full h-full pointer-events-none">
@@ -784,9 +865,8 @@ export default function Experience() {
 
             {/* Active Moving Beacon Dot (Glued in 100% mathematical unison with the leading line tip) */}
             <div
-              className={`absolute w-3.5 h-3.5 rounded-full border-2 border-white shadow-md z-40 pointer-events-none -translate-x-1/2 -translate-y-1/2 ${
-                isCompleted ? "bg-[#2563EB] scale-125" : "bg-[#1A5FD0]"
-              }`}
+              className={`absolute w-3.5 h-3.5 rounded-full border-2 border-white shadow-md z-40 pointer-events-none -translate-x-1/2 -translate-y-1/2 ${isCompleted ? "bg-[#2563EB] scale-125" : "bg-[#1A5FD0]"
+                }`}
               style={{
                 left: `${(beaconPos.x / 1000) * 100}%`,
                 top: `${(beaconPos.y / 780) * 100}%`,
@@ -820,13 +900,13 @@ export default function Experience() {
                     className="bg-white rounded-xl p-4 shadow-lg border border-blue-100 text-center"
                   >
                     <span className="text-[10px] font-black uppercase text-[#1A5FD0] tracking-wider block mb-1">
-                      ✦ Path Completed · 2021 → NOW
+                      ✦ Path Completed · 2023 → NOW
                     </span>
                     <h4 className="font-black text-sm text-[#13233A] mb-1">
                       Full loop completed.
                     </h4>
                     <p className="text-[11px] text-gray-500 mb-2">
-                      9 stops across 4+ years of shipping products for millions.
+                      7 stops across shipping products and leading design.
                     </p>
                     <button
                       type="button"
@@ -875,9 +955,8 @@ export default function Experience() {
                   key={st.id}
                   type="button"
                   onClick={() => walkToStop(idx)}
-                  className={`w-2.5 h-2.5 rounded-full transition-all cursor-pointer ${
-                    !isCompleted && idx === activeIdx ? "bg-[#13233A] scale-125" : "bg-gray-300 hover:bg-gray-400"
-                  }`}
+                  className={`w-2.5 h-2.5 rounded-full transition-all cursor-pointer ${!isCompleted && idx === activeIdx ? "bg-[#13233A] scale-125" : "bg-gray-300 hover:bg-gray-400"
+                    }`}
                   aria-label={st.name}
                 />
               ))}
@@ -886,9 +965,8 @@ export default function Experience() {
             <button
               type="button"
               onClick={() => walkToStop(STOPS.length)}
-              className={`text-[10.5px] font-bold pl-1.5 border-l border-gray-200 transition-colors cursor-pointer ${
-                isCompleted ? "text-[#1A5FD0] font-black" : "text-gray-500 hover:text-black"
-              }`}
+              className={`text-[10.5px] font-bold pl-1.5 border-l border-gray-200 transition-colors cursor-pointer ${isCompleted ? "text-[#1A5FD0] font-black" : "text-gray-500 hover:text-black"
+                }`}
             >
               2021 → now {isCompleted && "✓"}
             </button>
