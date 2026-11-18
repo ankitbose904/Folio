@@ -28,25 +28,25 @@ export default function Navbar() {
   return (
     <>
       <motion.nav
-        className="fixed top-4 md:top-8 left-0 w-full flex justify-center z-[100] pointer-events-none px-4"
-        initial={{ y: -100, opacity: 0 }}
+        className="fixed top-3 md:top-5 left-0 w-full flex justify-center z-[100] pointer-events-none px-4"
+        initial={{ y: -80, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+        transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
       >
-        <div className="flex items-center justify-between bg-white rounded-full px-6 md:px-8 py-3 md:py-4 w-full max-w-3xl pointer-events-auto shadow-[0_20px_40px_rgba(0,0,0,0.3)]">
-          <div className="font-black text-[1rem] md:text-lg tracking-wide text-[#111]" style={{ fontFamily: 'var(--font-archivo), sans-serif' }}>
+        <div className="flex items-center justify-between bg-white/95 backdrop-blur-md border border-black/10 rounded-full px-4 sm:px-6 py-2 sm:py-2.5 w-full max-w-xl pointer-events-auto shadow-[0_12px_28px_rgba(0,0,0,0.12)]">
+          <div className="font-black text-xs sm:text-sm tracking-wide text-[#111]" style={{ fontFamily: 'var(--font-archivo), sans-serif' }}>
             <Link href="/" className="transition-opacity duration-300 hover:opacity-70" onClick={() => setIsMobileMenuOpen(false)}>
               DESIGNED BY <span className="text-[#cc0000]">ANKIT</span>
             </Link>
           </div>
           
           {/* Desktop Links */}
-          <ul className="hidden md:flex gap-8 items-center">
+          <ul className="hidden md:flex gap-5 sm:gap-6 items-center">
             {navLinks.map((item) => (
               <li key={item.label}>
                 <Link
                   href={item.href}
-                  className="text-[0.95rem] font-semibold text-[#666] hover:text-[#111] transition-colors duration-300"
+                  className="text-xs sm:text-[0.85rem] font-semibold text-[#555] hover:text-[#111] transition-colors duration-200"
                 >
                   {item.label}
                 </Link>
@@ -55,7 +55,7 @@ export default function Navbar() {
             <li>
               <button
                 onClick={() => setIsResumeModalOpen(true)}
-                className="text-[0.95rem] font-semibold text-[#666] hover:text-[#111] transition-colors duration-300"
+                className="text-xs sm:text-[0.85rem] font-semibold text-[#555] hover:text-[#111] transition-colors duration-200 cursor-pointer"
               >
                 Resume
               </button>
@@ -68,7 +68,7 @@ export default function Navbar() {
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-label="Toggle menu"
           >
-            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            {isMobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
           </button>
         </div>
       </motion.nav>

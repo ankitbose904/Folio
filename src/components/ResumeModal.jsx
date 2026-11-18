@@ -2,7 +2,6 @@
 
 import { motion } from "framer-motion";
 import { Download, X } from "lucide-react";
-import { useState } from "react";
 
 export default function ResumeModal({ isOpen, onClose }) {
   if (!isOpen) return null;

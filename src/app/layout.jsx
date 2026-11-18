@@ -1,5 +1,6 @@
 import { Inter, Archivo_Black, Caveat } from "next/font/google";
 import "./globals.css";
+import CustomCursor from "@/components/CustomCursor.jsx";
 // import SmoothScroll from "@/components/SmoothScroll.jsx";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
@@ -16,7 +17,8 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body suppressHydrationWarning className={`${inter.variable} ${archivo.variable} ${caveat.variable} antialiased bg-[#fdfdfd] text-[#111111] overflow-x-hidden font-sans`}>
+      <body suppressHydrationWarning className={`${inter.variable} ${archivo.variable} ${caveat.variable} antialiased bg-[#fdfdfd] text-[#111111] overflow-x-clip font-sans`}>
+        <CustomCursor />
         {children}
       </body>
     </html>

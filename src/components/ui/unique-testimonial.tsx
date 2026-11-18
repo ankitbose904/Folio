@@ -38,9 +38,15 @@ export function UniqueTestimonial() {
   // Keep a ref always pointing to the latest activeIndex
   // so the interval closure never goes stale
   const activeIndexRef = useRef(activeIndex)
-  activeIndexRef.current = activeIndex
   const isAnimatingRef = useRef(isAnimating)
-  isAnimatingRef.current = isAnimating
+
+  useEffect(() => {
+    activeIndexRef.current = activeIndex
+  }, [activeIndex])
+
+  useEffect(() => {
+    isAnimatingRef.current = isAnimating
+  }, [isAnimating])
 
   // Auto-scroll functionality
   useEffect(() => {
@@ -82,7 +88,7 @@ export function UniqueTestimonial() {
       {/* Quote Container */}
       <div className="relative px-8 min-h-[140px] flex items-center justify-center">
         <span className="absolute -left-4 -top-8 text-8xl font-serif text-[#ff3b30]/10 select-none pointer-events-none italic">
-          "
+          &ldquo;
         </span>
 
         <p
@@ -95,7 +101,7 @@ export function UniqueTestimonial() {
         </p>
 
         <span className="absolute -right-4 -bottom-10 text-8xl font-serif text-[#ff3b30]/10 select-none pointer-events-none italic">
-          "
+          &rdquo;
         </span>
       </div>
 
@@ -131,6 +137,7 @@ export function UniqueTestimonial() {
               >
                 {/* Avatar with smooth ring animation */}
                 <div className="relative flex-shrink-0">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
                     src={testimonial.avatar || "/placeholder.svg"}
                     alt={testimonial.author}
